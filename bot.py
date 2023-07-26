@@ -42,7 +42,7 @@ async def on_message(message):
                     filename = file_url.split('/')[-1]
                     print(filename)
 
-                    if file_url.endswith('.gpx'):
+                    if file_url.lower().endswith('.gpx'):
                         result = gpx2png.convert(file_url)
                         image_data = result["data"]
                         distance = result["total"]
@@ -75,7 +75,7 @@ async def on_message(message):
                 file_url = attachment.url
                 filename = file_url.split('/')[-1]
                 print(filename)
-                if file_url.endswith('.gpx'):
+                if file_url.lower().endswith('.gpx'):
                     result = gpx2png.convert(file_url)
                     image_data = result["data"]
                     distance = result["total"]
